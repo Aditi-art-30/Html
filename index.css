@@ -1,0 +1,19 @@
+img{
+    height:20px;
+}
+ul{
+    display:flex;
+    gap:30px;   
+}
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;  
+}
+.logo{
+    margin-left:200px;
+}
+.menu{
+    display: flex;
+    margin-right:200px;
+}
