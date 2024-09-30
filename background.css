@@ -1,0 +1,29 @@
+* {}
+
+body .box {
+    background-color: skyblue;
+    height: 500px;
+    width: 500px;
+}
+
+.box1 {
+    background-color: palevioletred;
+    height: 500px;
+    width: 500px;
+}
+
+.box2 {
+    background: url(./assest1/flower1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 500px;
+}
+
+.box3 {
+    background: url(./assest1/flower.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 500px;
+}
