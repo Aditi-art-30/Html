@@ -1,0 +1,104 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.box1{
+    width: 500px;
+    height: 500px;
+    background-color:cornflowerblue;
+    border: 2px solid black;
+  
+}
+
+ .a1{
+     width: 150px;
+     height:150px;
+     background-color: rgb(189, 189, 31);
+     border: 1.5px solid black;
+}
+
+.box2{
+    width: 500px;
+    height: 500px;
+    background-color:cornflowerblue;
+    border: 2px solid black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.a2{
+    width: 150px;
+    height:150px;
+    background-color: rgb(189, 189, 31);
+    border: 1.5px solid black;
+}
+
+.box3{
+    width: 500px;
+    height: 500px;
+    background-color:cornflowerblue;
+    border: 2px solid black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.a3{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(189, 189, 31);
+    border: 1.5px solid black;
+}
+
+.box4{
+    width: 500px;
+    height: 500px;
+    background-color:cornflowerblue;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.a4{
+    width: 150px;
+    height: 150px;
+    background-color :rgb(189, 189, 31);
+    border: 1.5px solid black;
+}
+
+.box5{
+    width: 500px;
+    height: 500px;
+    background-color:cornflowerblue;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.a5{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(189, 189, 31);
+    border: 1.5px solid black;
+}
+
+.box6{
+    width: 500px;
+    height: 500px;
+    background-color:cornflowerblue;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.a6{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(189, 189, 31);
+    border: 1.5px solid black;
+}
