@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", system-ui;
+
+}
+
+
+.box{
+    height: 2000px;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+   
+}
+
+.Card{
+    height: 800px;
+    width: 800px;
+    background-color:aquamarine;
+    gap: 40px;
+}
+
+.img img{
+    background-color: brown;
+    height: 400px;
+    width: 800px;
+}
+
+.head{
+
+    height: 10%;
+    width: 80%;
+    background-color: blueviolet;
+}
+
+
+
+.head h1{
+    font-size: 200%;
+}
+
+.head p{
+    height: ;
+
+    font-size: 150%;
+}
+
+
+.arrow{
+    height: 100px;
+    width: 80%;
+    background-color: rgb(155, 155, 253);
+
+}
+
+.arrow p{
+    font-size: 300%;
+    color:blue;
+    text-align: center;
+    line-height: 100px;
+}
