@@ -15,10 +15,30 @@ body{
     flex-direction: column;
 }
 
+
+.log{
+    height: 450px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.h5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .form{
     height: 500px;
     width: 700px;
     background-color:aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .up{
@@ -40,7 +60,18 @@ body{
     justify-content: center; */
 } 
 
-.box .a1{
+.btn1{
+    width: 250px;
     display: flex;
-    
+    justify-content: space-between;
 }
+
+
+a{
+    background-color: rgba(80, 79, 79, 0.116);
+}
+.b{
+    border: 0px;
+    color: #636161a9;
+}
+
