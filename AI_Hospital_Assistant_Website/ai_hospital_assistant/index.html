@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Hospital Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">✚</div><div><b>CareAI</b><small>Hospital Assistant</small></div></div>
+    <nav>
+      <button class="nav active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+      <button class="nav" data-page="appointments">◷ <span>Appointments</span></button>
+      <button class="nav" data-page="patients">♙ <span>Patients</span></button>
+      <button class="nav" data-page="doctors">⚕ <span>Doctors</span></button>
+      <button class="nav" data-page="assistant">✦ <span>AI Assistant</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="nav" data-page="settings">⚙ <span>Settings</span></button>
+      <div class="support">Need help?<br><strong>Contact support</strong></div>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <button class="mobile-menu" id="menu">☰</button>
+      <div class="search">⌕ <input id="globalSearch" placeholder="Search patients, doctors, appointments..."></div>
+      <div class="header-actions"><span class="bell">🔔</span><div class="avatar">AG</div><div><b>Admin</b><small>Hospital Admin</small></div></div>
+    </header>
+
+    <section id="dashboard" class="page active-page">
+      <div class="page-title"><div><p class="eyebrow">Monday, August 31, 2026</p><h1>Good evening, Admin 👋</h1><p>Here's what's happening at your hospital today.</p></div><button class="primary" id="newAppointment">＋ New Appointment</button></div>
+      <div class="cards">
+        <div class="stat"><span class="stat-icon blue">♙</span><div><small>Total Patients</small><h2>1,284</h2><em>↑ 8.2% this month</em></div></div>
+        <div class="stat"><span class="stat-icon green">◷</span><div><small>Today's Appointments</small><h2 id="apptCount">42</h2><em>↑ 12% from yesterday</em></div></div>
+        <div class="stat"><span class="stat-icon purple">⚕</span><div><small>Available Doctors</small><h2>18</h2><em>3 on emergency duty</em></div></div>
+        <div class="stat"><span class="stat-icon orange">▣</span><div><small>Pending Reports</small><h2>07</h2><em class="warning">Requires attention</em></div></div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Today's Appointments</h3><p>Upcoming patient visits</p></div><button class="link" data-page="appointments">View all →</button></div>
+          <div class="table-wrap"><table><thead><tr><th>Patient</th><th>Doctor</th><th>Time</th><th>Department</th><th>Status</th></tr></thead>
+          <tbody id="appointmentRows"></tbody></table></div>
+        </div>
+        <div class="panel ai-card">
+          <div class="ai-orb">✦</div><h3>AI Hospital Assistant</h3><p>Ask me about appointments, patients, departments, or hospital workflows.</p>
+          <button class="primary full" data-page="assistant">Start AI Assistant</button>
+          <div class="quick"><button data-question="What appointments are coming up?">Upcoming appointments</button><button data-question="Which doctors are available?">Available doctors</button></div>
+        </div>
+      </div>
+      <div class="panel activity"><div class="panel-head"><div><h3>Recent Activity</h3><p>Latest hospital updates</p></div></div>
+        <div class="activities"><div>🟢 <span><b>Lab report uploaded</b><small>Blood test for Priya Shah · 8 min ago</small></span></div><div>🔵 <span><b>Appointment confirmed</b><small>Rahul Patil with Dr. Mehta · 22 min ago</small></span></div><div>🟠 <span><b>Prescription pending</b><small>Review required for Sneha Joshi · 41 min ago</small></span></div></div>
+      </div>
+    </section>
+
+    <section id="appointments" class="page">
+      <div class="page-title"><div><p class="eyebrow">Hospital management</p><h1>Appointments</h1><p>Manage today's patient schedule.</p></div><button class="primary" id="newAppointment2">＋ New Appointment</button></div>
+      <div class="panel"><div class="toolbar"><input id="apptFilter" placeholder="Search appointments..."><select id="statusFilter"><option>All statuses</option><option>Confirmed</option><option>Waiting</option><option>Completed</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>Patient</th><th>Doctor</th><th>Time</th><th>Department</th><th>Status</th></tr></thead><tbody id="allAppointments"></tbody></table></div></div>
+    </section>
+
+    <section id="patients" class="page">
+      <div class="page-title"><div><p class="eyebrow">Patient records</p><h1>Patients</h1><p>Quick access to registered patients.</p></div><button class="primary" id="addPatient">＋ Add Patient</button></div>
+      <div class="cards mini-cards"><div class="stat"><div><small>Registered</small><h2>1,284</h2></div></div><div class="stat"><div><small>Admitted</small><h2>96</h2></div></div><div class="stat"><div><small>Discharged today</small><h2>21</h2></div></div></div>
+      <div class="panel"><div class="toolbar"><input id="patientFilter" placeholder="Search patient name..."></div><div class="patient-grid" id="patientGrid"></div></div>
+    </section>
+
+    <section id="doctors" class="page">
+      <div class="page-title"><div><p class="eyebrow">Medical team</p><h1>Doctors</h1><p>View departments and availability.</p></div></div>
+      <div class="doctor-grid" id="doctorGrid"></div>
+    </section>
+
+    <section id="assistant" class="page">
+      <div class="page-title"><div><p class="eyebrow">AI-powered support</p><h1>AI Hospital Assistant</h1><p>Get quick answers about hospital operations.</p></div></div>
+      <div class="chat-shell panel"><div class="chat-head"><div class="ai-orb small">✦</div><div><b>CareAI</b><small>Online · Hospital Operations Assistant</small></div></div>
+        <div class="messages" id="messages"><div class="message bot">Hello! I'm CareAI. I can help with appointments, doctors, departments, patients and general hospital workflows. How can I help?</div></div>
+        <div class="suggestions"><button data-question="What appointments are coming up?">Appointments</button><button data-question="Which doctors are available?">Doctors</button><button data-question="Show today's hospital summary">Hospital summary</button><button data-question="How do I register a patient?">Patient registration</button></div>
+        <form id="chatForm"><input id="chatInput" placeholder="Ask CareAI something..." autocomplete="off"><button class="primary">Send</button></form>
+        <p class="disclaimer">Demo assistant: responses are generated from this website's sample hospital data. Not for diagnosis or emergency medical advice.</p>
+      </div>
+    </section>
+
+    <section id="settings" class="page"><div class="page-title"><div><p class="eyebrow">Configuration</p><h1>Settings</h1><p>Customize your hospital dashboard.</p></div></div>
+      <div class="panel settings"><label>Hospital name<input value="CareAI General Hospital"></label><label>Admin notifications <input type="checkbox" checked></label><label>AI assistant enabled <input type="checkbox" checked></label><button class="primary" id="saveSettings">Save settings</button></div>
+    </section>
+  </main>
+</div>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="close" id="closeModal">×</button><h2>New Appointment</h2><p>Enter appointment details.</p><form id="appointmentForm"><label>Patient name<input id="patientName" required placeholder="e.g. Ananya Kulkarni"></label><label>Doctor<select id="doctorName"><option>Dr. Anjali Mehta</option><option>Dr. Rohan Deshmukh</option><option>Dr. Neha Kulkarni</option><option>Dr. Amit Shah</option></select></label><label>Time<input id="apptTime" required type="time"></label><label>Department<select id="department"><option>Cardiology</option><option>General Medicine</option><option>Pediatrics</option><option>Orthopedics</option></select></label><button class="primary full">Create Appointment</button></form></div></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
