@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Add Agriculture Trace Record</h1>
+<form method="post" class="card">
+{% csrf_token %}
+<label>Crop/Product Name</label><input name="crop_name" required>
+<label>Farmer Name</label><input name="farmer_name" required>
+<label>Location</label><input name="location" required>
+<label>Harvest Date</label><input type="date" name="harvest_date" required>
+<label>Quality</label><select name="quality"><option>Excellent</option><option>Good</option><option>Average</option></select>
+<label>Status</label><select name="status"><option>Harvested</option><option>Processed</option><option>Transported</option><option>Delivered</option></select>
+<label>Notes</label><textarea name="notes"></textarea>
+<button type="submit">Save Record</button>
+</form>
+{% endblock %}

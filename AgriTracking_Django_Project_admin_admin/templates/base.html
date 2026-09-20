@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AgriTracing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body{font-family:Arial;margin:0;background:#f3f8f2;color:#17351d}
+      nav{background:#2e7d32;padding:18px}
+      nav a{color:white;margin-right:20px;text-decoration:none;font-weight:bold}
+      .container{max-width:1000px;margin:30px auto;padding:0 20px}
+      .card{background:white;padding:25px;border-radius:12px;margin:15px 0;box-shadow:0 2px 8px #bbb}
+      input,select,textarea{width:100%;padding:10px;margin:6px 0 15px;box-sizing:border-box}
+      button{background:#2e7d32;color:white;border:0;padding:11px 18px;border-radius:6px}
+      table{width:100%;border-collapse:collapse;background:white}
+      th,td{padding:12px;border:1px solid #ddd;text-align:left}
+      th{background:#e7f3e7}
+    </style>
+</head>
+<body>
+<nav>
+ <a href="/">AgriTracing</a>
+ <a href="/records/">Trace Records</a>
+ <a href="/add/">Add Record</a>
+ <a href="/admin/">Admin</a>
+</nav>
+<div class="container">{% block content %}{% endblock %}</div>
+</body>
+</html>

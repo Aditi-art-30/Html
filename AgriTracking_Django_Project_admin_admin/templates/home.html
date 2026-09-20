@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+<h1>AgriTracing</h1>
+<h2>Farm-to-Consumer Traceability System</h2>
+<p>Track agricultural products from harvesting to the final stage using a simple Django web application.</p>
+<p><b>Total Trace Records:</b> {{ count }}</p>
+<a href="/records/"><button>View Records</button></a>
+</div>
+{% endblock %}

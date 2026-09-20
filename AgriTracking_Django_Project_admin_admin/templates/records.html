@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Trace Records</h1>
+<form method="get" class="card">
+<input name="q" value="{{ q }}" placeholder="Search crop or farmer">
+<button>Search</button>
+</form>
+<table>
+<tr><th>Crop</th><th>Farmer</th><th>Location</th><th>Harvest Date</th><th>Quality</th><th>Status</th></tr>
+{% for r in records %}
+<tr><td>{{r.crop_name}}</td><td>{{r.farmer_name}}</td><td>{{r.location}}</td><td>{{r.harvest_date}}</td><td>{{r.quality}}</td><td>{{r.status}}</td></tr>
+{% empty %}
+<tr><td colspan="6">No records found.</td></tr>
+{% endfor %}
+</table>
+{% endblock %}
